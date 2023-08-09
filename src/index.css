@@ -18,3 +18,11 @@ body {
   display: flex;
   background-color: black;
 }
+
+.MuiTabs-indicator {
+  background-color: violet !important;
+}
+
+.css-19y6t7e-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  color: violet !important;
+}

@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import IconTabs  from './components/Home'
+import IconTabs  from './components/Tabs'
 
 function App() {
   return (
