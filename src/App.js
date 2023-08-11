@@ -1,11 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
-import IconTabs  from './components/Tabs'
+import Home  from './components/Home'
+import About from './pages/About';
+import Contact from './pages/contact';
 
 function App() {
   return (
     <>
     <Routes>
-      <Route path="/" element={<IconTabs />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
     </Routes>
     </>
   );

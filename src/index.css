@@ -4,6 +4,25 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+*::-webkit-scrollbar{
+  display: none;
+}
+
+:root {
+  --violet : violet;
+  --bg : black;
+  --text : rgba(255, 255, 255, 0.4);
+  --lgbg :  rgb(56, 56, 56);
+  --icon : rgba(255, 255, 255, 0.7);
+  --select : rgba(255, 255, 255, 0.7);
+}
+
+.right a {
+  text-decoration: none!important;
+  color:var(--text) !important;
 }
 
 html {
@@ -15,14 +34,167 @@ body {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  background-color: black;
+  /* display: flex; */
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 .MuiTabs-indicator {
-  background-color: violet !important;
+  background-color: var(--select) !important;
+}
+
+.css-19y6t7e-MuiButtonBase-root-MuiTab-root {
+  color: var(--icon) !important;
 }
 
 .css-19y6t7e-MuiButtonBase-root-MuiTab-root.Mui-selected {
-  color: violet !important;
+  color: var(--select) !important;
+}
+
+.floating-div {
+  height: 85vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 1.7em;
+}
+
+.right {
+  right: 0px;
+}
+
+.floating-icons {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25em;
+  font-size: 24px;
+  background-color: var(--lgbg);
+  padding: 1em .5em;
+}
+
+.right-icons {
+  margin-right: 1em;
+}
+
+.left {
+  left: 0em;
+}
+
+.left-icons {
+  margin-left: .5em;
+  min-height: 12em;
+  background-color: var(--bg);
+  gap: 1.7em;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.red { background-color: #4285F4; }
+.blue { background-color: #DB4437;; }
+.green { background-color: #F4B400; }
+.yellow { background-color: #0F9D58; }
+.purple { background-color: var(--text); }
+
+.switch {  
+  position: absolute;
+  top: 2em;
+  right: 0;
+}
+
+.css-j204z7-MuiFormControlLabel-root {
+  margin-right: 12px !important;
+}
+
+.centered-content {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+  width: 55%;
+  margin: auto;
+}
+
+
+.contact {
+  min-height: 40vh;
+  padding: 2em 2em 1em 2em;
+}
+
+.modal {
+  height: 400px;
+  width: 650px;
+  margin: 4em auto;
+}
+
+.modal input {
+  background: rgb(126 110 110 / 15%);
+  width: 100%;
+  padding: 8px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+.modal label {
+  color: var(--fav)
+}
+
+.modal button {
+  background: var(--fav);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 21px;
+  outline: none;
+  overflow: hidden;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .modal {
+    height: 360px;
+    width: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    z-index: 999;
+  }
+  .modal input {
+    width: 16em;
+  }
+  .right {
+    margin: 0;
+  }
+  .left{
+    background-color: transparent;
+    z-index: -999;
+  }
+}
+
+.title {
+  font-size: 35px;
+}
+
+.modal button {
+  background-color: #DB4437 !important;
 }
