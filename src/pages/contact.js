@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import IconTabs from '../components/Tabs';
 import CustomizedSwitches from '../components/switch';
 import FloatingActionButtonsLeft from '../components/colors';
@@ -6,6 +6,10 @@ import FloatingActionButtonsRight from '../components/Fab';
 
 function Contact() {
 
+    useEffect(() => {
+        document.title =  'Contact  📞'
+    })
+    
     const removeInput = () => {
         document.getElementById("name").value = ""; 
         document.getElementById("email").value = "";
