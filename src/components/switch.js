@@ -54,16 +54,16 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 export default function CustomizedSwitches() {
   const [darkMode, setDarkMode] = React.useState(true);
   const ChangeColor = () => {
-    setDarkMode(!darkMode); 
+    setDarkMode(!darkMode);
 
-    const bgColor = darkMode ? "white" : "black";
-    const lgbgColor = darkMode ? "white" : "rgb(56, 56, 56)";
+    const bgColor = darkMode ? "white" : "rgba(0, 0, 0, 0.85)";
+    // const lgbgColor = darkMode ? "white" : "rgb(56, 56, 56)";
     const textColor = !darkMode ? "white" : "black";
     document.documentElement.style.setProperty("--bg", bgColor);
     document.documentElement.style.setProperty("--text", textColor);
-    document.documentElement.style.setProperty("--lgbg", lgbgColor);
+    // document.documentElement.style.setProperty("--lgbg", lgbgColor);
     document.documentElement.style.setProperty("--icon", textColor);
-    document.documentElement.style.setProperty("--select", textColor )
+    document.documentElement.style.setProperty("--select", textColor);
   };
   return (
     <div className="switch">

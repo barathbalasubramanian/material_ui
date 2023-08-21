@@ -13,7 +13,7 @@
 
 :root {
   --violet : violet;
-  --bg : black;
+  --bg : rgba(0, 0, 0, 0.95);
   --text : rgba(255, 255, 255, 0.4);
   --lgbg :  rgb(56, 56, 56);
   --icon : rgba(255, 255, 255, 0.7);
@@ -60,7 +60,7 @@ body {
 }
 
 .right {
-  right: 0px;
+  right: 20px;
 }
 
 .floating-icons {
@@ -71,7 +71,7 @@ body {
   justify-content: center;
   gap: 1.25em;
   font-size: 24px;
-  background-color: var(--lgbg);
+  /* background-color: var(--lgbg); */
   padding: 1em .5em;
 }
 
@@ -86,7 +86,7 @@ body {
 .left-icons {
   margin-left: .5em;
   min-height: 12em;
-  background-color: var(--bg);
+  /* background-color: var(--bg); */
   gap: 1.7em;
 }
 
@@ -109,7 +109,7 @@ body {
 }
 
 .css-j204z7-MuiFormControlLabel-root {
-  margin-right: 12px !important;
+  margin-right: 0px !important;
 }
 
 .centered-content {
@@ -179,6 +179,9 @@ body {
   .left{
     background-color: transparent;
     z-index: -999;
+  }
+  .right {
+    right: 10px;
   }
   .centered-content{
     width: 100%;
