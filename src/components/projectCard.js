@@ -12,7 +12,7 @@ function ProjectCard(props) {
             glareMaxOpacity={0.95}
             scale={.75}
         >
-            <div className='preview-icon'><Preview /></div>
+            <div className='preview-icon'><a href={props.link}><Preview /></a></div>
             <div className="inner-element">
                 <div className="logo"><img src="" alt="" /></div>
                 <div className='project'>
