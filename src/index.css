@@ -1,15 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200&family=Work+Sans:wght@300&display=swap");
 
-* {
+*:not(.projectDetail){
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 *::-webkit-scrollbar {
   display: none;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  max-height: 100vh;
+  overflow: scroll;
 }
 
 :root {
@@ -32,8 +38,6 @@ html {
 }
 
 body {
-  min-height: 100vh;
-  max-height: 100vh;
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -147,6 +151,10 @@ body {
 
 .css-j204z7-MuiFormControlLabel-root {
   margin-right: 0px !important;
+}
+
+.MuiTabs-root .css-x3rv80 {
+  min-height: 0 !important;
 }
 
 .centered-content {
@@ -273,7 +281,7 @@ body {
     gap: 4em;
     width: 100%;
     height: 100vh;
-    overflow-x: scroll;
+    overflow-x: scroll !important;
     margin-left: 2em;
 }
 
@@ -289,6 +297,10 @@ body {
   }
   .modal input {
     width: 14em;
+  }
+  .title {
+    margin-left: 0.6em;
+    margin-top: 3em;
   }
   .right {
     margin: 0;
