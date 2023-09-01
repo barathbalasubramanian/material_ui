@@ -6,7 +6,6 @@
     left: 50%;              
     transform: translate(-50%, -50%);
 }
-
 .keyboard {
     display: flex;
     flex-wrap: wrap;
@@ -17,19 +16,67 @@
     column-gap: 0.4em;
     row-gap: 1em;
 }
-
 .keys {
-    background-color: var(--keyboard);
     width: 3em;
     height:3em;
     display: flex;
     justify-content: center;
     align-items: center; 
-    color: white;
+    color: var(--text);
+    box-shadow: 0rem 0 .75rem var(--keyshadow);
+    
 }
 .ctrl {
     width: 4.2em;
 }
 .enter {
     width: 6em;
+}
+
+.name {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%);
+    color: white;
+}
+
+.myName {
+    font-size: 50px;
+    letter-spacing: 5px;
+    color: cadetblue;
+}
+
+.deg {
+    padding-left: 4px;
+    font-size: 18px;
+}
+
+@keyframes blastFall {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+    70% {
+        opacity: 0.4;
+        transform: translateY(10px) scale(0.8);
+    }
+    90% {
+        opacity: 0.2;
+        transform: translateY(30px) scale(0.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(50px) scale(0);
+    }
+}
+
+.blastAnimation {
+    visibility: hidden;
+    transform-origin: center center;
+    animation: blastFall 1s forwards;
 }

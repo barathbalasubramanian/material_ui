@@ -58,13 +58,17 @@ export default function CustomizedSwitches() {
     setDarkMode(!darkMode);
 
     const bgColor = darkMode ? "white" : "rgba(0, 0, 0)";
-    const textColor = !darkMode ? "white" : "black";
+    const textColor = !darkMode ? "rgba(255,255,255,0.4)" : "black";
     const keyboard_ = !darkMode ? "#9c9c9c66" : "rgba(0,0,0,.75)"
+    const keyshadow_ = !darkMode ? "rgba(255, 255, 255, .60)" : "rgba(0,0,0,0.60)";
+
     document.documentElement.style.setProperty("--bg", bgColor);
     document.documentElement.style.setProperty("--text", textColor);
     document.documentElement.style.setProperty("--icon", textColor);
     document.documentElement.style.setProperty("--select", textColor);
     document.documentElement.style.setProperty("--keyboard", keyboard_)
+    document.documentElement.style.setProperty("--keyshadow", keyshadow_)
+
   };
 
   return (

@@ -26,7 +26,8 @@ body, html {
   --icon: rgba(255, 255, 255, 0.7);
   --select: rgba(255, 255, 255, 0.7);
   --project-bg: 0,0,0;
-  --keyboard: #9c9c9c66
+  --keyboard: #9c9c9c66;
+  --keyshadow: rgba(255, 255, 255, .70);
 }
 
 .right a {
@@ -315,4 +316,34 @@ body {
   .centered-content {
     width: 100%;
   }
+}
+
+
+
+
+.hero_keyboard__f1iaI {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+}
+
+.hero_keys__3qR5Z {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: transform 1s ease-out;
+}
+
+.hero_ctrl__AJlkz, .hero_enter__dn7g7 {
+  width: 60px;
+}
+
+/* Random splitting effect */
+.split .hero_keys__3qR5Z {
+  transform: translate(calc(100px * var(--x, 0)), calc(100px * var(--y, 0)));
 }
