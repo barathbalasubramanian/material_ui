@@ -3,15 +3,16 @@ import IconTabs from "./Tabs";
 import FloatingActionButtonsRight from "./Fab";
 import FloatingActionButtonsLeft from "./colors";
 import CustomizedSwitches from "./switch";
-import Bg from "./bg";
+import Hero from "./hero";
 
 function Home() {
   return (
     <>
-      <IconTabs />
-      <CustomizedSwitches />
-      <FloatingActionButtonsLeft />
-      <FloatingActionButtonsRight />
+        <Hero />
+        <IconTabs />
+        <CustomizedSwitches />
+        <FloatingActionButtonsLeft />
+        <FloatingActionButtonsRight />
     </>
   );
 }

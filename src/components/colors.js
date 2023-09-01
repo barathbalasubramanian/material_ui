@@ -27,7 +27,6 @@ function FloatingActionButtonsLeft(props) {
         }
     }
 
-    console.log(props['location'])
     return (
         <div className=
             {

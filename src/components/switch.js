@@ -3,6 +3,7 @@ import { styled } from "@mui/material/styles";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
+import { keyboard } from "@testing-library/user-event/dist/keyboard";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -56,15 +57,16 @@ export default function CustomizedSwitches() {
   const ChangeColor = () => {
     setDarkMode(!darkMode);
 
-    const bgColor = darkMode ? "white" : "rgba(0, 0, 0, 0.85)";
-    // const lgbgColor = darkMode ? "white" : "rgb(56, 56, 56)";
+    const bgColor = darkMode ? "white" : "rgba(0, 0, 0)";
     const textColor = !darkMode ? "white" : "black";
+    const keyboard_ = !darkMode ? "#9c9c9c66" : "rgba(0,0,0,.75)"
     document.documentElement.style.setProperty("--bg", bgColor);
     document.documentElement.style.setProperty("--text", textColor);
-    // document.documentElement.style.setProperty("--lgbg", lgbgColor);
     document.documentElement.style.setProperty("--icon", textColor);
     document.documentElement.style.setProperty("--select", textColor);
+    document.documentElement.style.setProperty("--keyboard", keyboard_)
   };
+
   return (
     <div className="switch">
       <FormGroup>
