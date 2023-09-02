@@ -24,13 +24,18 @@
     align-items: center; 
     color: var(--text);
     box-shadow: 0rem 0 .75rem var(--keyshadow);
-    transition: transform 1s ease-out;
+    transition: transform 1s, background-color 0.2s ease-in-out;
 }
 .ctrl {
     width: 4.2em;
 }
 .enter {
     width: 6em;
+}
+
+.clicked {
+    transform: scale(1.1); 
+    background-color: rgba(95, 158, 160 , .70); 
 }
 
 .name {

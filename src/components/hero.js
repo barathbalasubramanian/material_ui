@@ -14,15 +14,20 @@ function Hero({ onCompletion }) {
     const degreeRef = useRef(null);
 
     useEffect(() => {
-        typeName();
+
+        const keyboard = document.querySelector('.fade-in')
+        keyboard.classList.add('visible')
+
+        setTimeout(() => { typeName() } , 200 );
+
         const nameDuration = 'BarathKumar B'.length * 200;
         const degDuration = "B.Tech".length * 200;
 
-        const typingTimer = setTimeout(typing, 1000 + nameDuration);
+        const typingTimer = setTimeout(typing, 500 + nameDuration);
         const splitKeysTimer = setTimeout(() => {
             splitKeys();
             onCompletion();
-        }, 1000 + nameDuration + degDuration + 1000); 
+        }, 1000 + nameDuration + degDuration + 500); 
 
         return () => {
             clearTimeout(typingTimer);
@@ -43,6 +48,9 @@ function Hero({ onCompletion }) {
         
         document.querySelector('.keyboard').classList.add(`${Styles.split}`);
         setTimeout(() => {
+            document.querySelector('.keyboard').style.display = "none"
+        }, 500)
+        setTimeout(() => {
             onCompletion();
           }, 1100);
     };
@@ -50,20 +58,40 @@ function Hero({ onCompletion }) {
     const typeName = () => {
         const name = 'BarathKumar B';
         let delay = 200;
+        let clickedDuration = 500;
     
         for (let i = 0; i < name.length; i++) {
             setTimeout(() => {
+                console.log(name[i])
+                if (name[i] === " ") {  } 
+                else { 
+                    let letter = document.getElementById(`Key${name[i].toUpperCase()}`); 
+                    letter.classList.add(`${Styles.clicked}`)
+                    setTimeout(() => {
+                        letter.classList.remove(`${Styles.clicked}`);
+                    }, clickedDuration);
+                }
                 nameRef.current.innerHTML += name[i];
             }, i * delay); 
+            
         }
     };
 
     const typing = () => {
         const deg = "B.Tech";
         let delay = 200;
+        let clickedDuration = 500;
 
         for (let i = 0; i < deg.length; i++) {
             setTimeout(() => {
+                if (deg[i] === ".") {  } 
+                else { 
+                    let letter = document.getElementById(`Key${deg[i].toUpperCase()}`); 
+                    letter.classList.add(`${Styles.clicked}`)
+                    setTimeout(() => {
+                        letter.classList.remove(`${Styles.clicked}`);
+                    }, clickedDuration);
+                }
                 degreeRef.current.innerHTML += deg[i];
             }, i * delay); 
         }
@@ -78,7 +106,7 @@ function Hero({ onCompletion }) {
                 <div className={`${Styles.myName} myName`} ref={nameRef}></div>
                 <div className={`${Styles.deg} deg`} ref={degreeRef}></div>
             </div>
-            <div className={`${Styles.herokeyboard} keydiv`}>
+            <div className={`${Styles.herokeyboard} keydiv fade-in`} >
                 <div className={`${Styles.keyboard} keyboard`} ref={keyboardRef}>
                     {KEYBOARD_LAYOUT.map((row, rowIndex) => (
                         row.map(key => (
