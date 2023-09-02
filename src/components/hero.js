@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Styles from '../css/hero.module.css';
 import snd from '../assets/keyboard.mp3';
+import me from '../assets/me.png'
 
 const KEYBOARD_LAYOUT = [
   ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
@@ -52,7 +53,9 @@ function Hero({ onCompletion }) {
         }, 500)
         setTimeout(() => {
             onCompletion();
-          }, 1100);
+            const image = document.querySelector(`.${Styles.photo}`);
+            image.classList.add(`${Styles.animate}`);
+        }, 1100);
     };
 
     const typeName = () => {
@@ -98,7 +101,10 @@ function Hero({ onCompletion }) {
     };
 
     return (
-        <div>
+        <div className='heroSection'>
+            <div className={Styles.photo}>
+                <img src={me} alt="My Pic" />
+            </div>
             <div className={Styles.name}>
                 <audio id="myAudio" autoPlay>
                     <source src={snd} type="audio/mpeg" />

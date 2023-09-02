@@ -24,10 +24,10 @@ function Home() {
       <Hero onCompletion={() => setShowComponents(true)} />
       { showComponents && (
           <>
-              <div className="fade-in"><IconTabs /></div>
-              <div className="fade-in"><CustomizedSwitches /></div>
-              <div className="fade-in"><FloatingActionButtonsLeft /></div>
-              <div className="fade-in"><FloatingActionButtonsRight /></div>
+              <div className="fade-in icontabs"><IconTabs /></div>
+              <div className="fade-in switches"><CustomizedSwitches /></div>
+              <div className="fade-in leftDiv"><FloatingActionButtonsLeft /></div>
+              <div className="fade-in RigthDiv"><FloatingActionButtonsRight /></div>
           </>
       )}
     </>

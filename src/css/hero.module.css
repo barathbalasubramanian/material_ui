@@ -60,3 +60,20 @@
 .split .keys {
     transform: translate(calc(100px * var(--x, 0)), calc(100px * var(--y, 0)));
 }
+
+.photo {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    right: 100em;
+    transition: all 1s;
+}
+
+.animate {
+    width: 214px;
+    height: 214px;
+    top: 35%;
+    left: 15%;
+}
+
