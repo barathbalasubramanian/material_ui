@@ -24,7 +24,7 @@
     align-items: center; 
     color: var(--text);
     box-shadow: 0rem 0 .75rem var(--keyshadow);
-    
+    transition: transform 1s ease-out;
 }
 .ctrl {
     width: 4.2em;
@@ -38,7 +38,7 @@
     top: 15%;
     left: 50%;
     transform: translate(-50%);
-    color: white;
+    color: var(--text);
 }
 
 .myName {
@@ -52,31 +52,6 @@
     font-size: 18px;
 }
 
-@keyframes blastFall {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.7;
-        transform: scale(1.1);
-    }
-    70% {
-        opacity: 0.4;
-        transform: translateY(10px) scale(0.8);
-    }
-    90% {
-        opacity: 0.2;
-        transform: translateY(30px) scale(0.5);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(50px) scale(0);
-    }
-}
-
-.blastAnimation {
-    visibility: hidden;
-    transform-origin: center center;
-    animation: blastFall 1s forwards;
+.split .keys {
+    transform: translate(calc(100px * var(--x, 0)), calc(100px * var(--y, 0)));
 }

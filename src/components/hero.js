@@ -1,112 +1,100 @@
-import React, { useEffect } from 'react'
-import image from "../assets/me.png";
-import Styles from '../css/hero.module.css'
-import snd from '../assets/keyboard.mp3'
+import React, { useEffect, useRef } from 'react';
+import Styles from '../css/hero.module.css';
+import snd from '../assets/keyboard.mp3';
 
-function Hero() {
+const KEYBOARD_LAYOUT = [
+  ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+  ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+  ['Ctrl', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'Enter']
+];
+
+function Hero({ onCompletion }) {
+    const keyboardRef = useRef(null);
+    const nameRef = useRef(null);
+    const degreeRef = useRef(null);
 
     useEffect(() => {
-        setkeyboard();
-    
-        setTimeout(() => {
-            typeName();
-        }, 1000);
-    
-        const name = 'BarathKumar B';
-        const delay = 200;
-        const nameDuration = name.length * delay;
-        const deg = "B.Tech";
-        const degDuration = deg.length * delay;
-    
-        setTimeout(splitKeys, 1000 + nameDuration); 
-        setTimeout(() => {
-            const heroKeyboardDiv = document.querySelector('.keydiv');
-            heroKeyboardDiv.classList.add(`${Styles.blastAnimation}`);
-            setTimeout(() => {
-                heroKeyboardDiv.style.display = 'none';
-            }, 1000);
+        typeName();
+        const nameDuration = 'BarathKumar B'.length * 200;
+        const degDuration = "B.Tech".length * 200;
+
+        const typingTimer = setTimeout(typing, 1000 + nameDuration);
+        const splitKeysTimer = setTimeout(() => {
+            splitKeys();
+            onCompletion();
         }, 1000 + nameDuration + degDuration + 1000); 
 
+        return () => {
+            clearTimeout(typingTimer);
+            clearTimeout(splitKeysTimer);
+        };
     }, []);
-    
-    function setkeyboard() {
-        console.log('Set Keyboard')
-        let keyboard = [ ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'], ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'], ['Ctrl', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'Enter']]
-        for (let r = 0; r < keyboard.length; r++) {
-            for (let c = 0; c < keyboard[r].length; c++) {
-                let keys = document.createElement('div')
-                keys.innerHTML = keyboard[r][c]
-                keys.id = 'Key' + keyboard[r][c]
-                keys.classList.add(`${Styles.keys}`)
-                document.querySelector('.keyboard').append(keys)
-                if (keyboard[r][c] === 'Enter') { keys.classList.add(`${Styles.enter}`) }
-                if (keyboard[r][c] === 'Ctrl') { keys.classList.add(`${Styles.ctrl}`) }
-            }
-        }
-    }
 
-    function splitKeys() {
-        const keys = document.querySelectorAll('.hero_keys__3qR5Z');
+    const splitKeys = () => {
+        const keys = document.querySelectorAll(`.${Styles.keys}`);
       
         keys.forEach(key => {
-          let randomX = (Math.random() - 0.5) * 2; // value between -1 and 1
-          let randomY = (Math.random() - 0.5) * 2; // value between -1 and 1
-      
+          let randomX = (Math.random() - 0.5) * 70;
+          let randomY = (Math.random() - 0.5) * 70;
+        
           key.style.setProperty('--x', randomX);
           key.style.setProperty('--y', randomY);
         });
-      
-        document.querySelector('.hero_keyboard__f1iaI').classList.add('split');
-      }
-      
-    function typeName() {
-        const name = 'BarathKumar B'
-        let delay = 200;
         
-        // setTimeout(() => {
-        //     var y = document.getElementById("myAudio");
-        //     y.muted = false;
-        //     y.play();
-        // }, 2000)
+        document.querySelector('.keyboard').classList.add(`${Styles.split}`);
+        setTimeout(() => {
+            onCompletion();
+          }, 1100);
+    };
 
-        for (let i = 0; i < name.length; i++) {
-            setTimeout((currentChar) => {
-                var key = document.getElementById(`Key${currentChar}`);
-                console.log(currentChar);
-                document.querySelector('.myName').innerHTML += currentChar;
-            }, i * delay, name[i]); 
-        }
-    }
-
-    function typing() {
-
+    const typeName = () => {
+        const name = 'BarathKumar B';
         let delay = 200;
-        const deg = "B.Tech";
-        for (let i = 0; i < deg.length; i++) {
-            setTimeout((currentChar) => {
-                // var key = document.getElementById(`Key${currentChar}`);
-                console.log(currentChar);
-                document.querySelector('.deg').innerHTML += currentChar;
-            }, i * delay, deg[i]); 
+    
+        for (let i = 0; i < name.length; i++) {
+            setTimeout(() => {
+                nameRef.current.innerHTML += name[i];
+            }, i * delay); 
         }
-    }
+    };
+
+    const typing = () => {
+        const deg = "B.Tech";
+        let delay = 200;
+
+        for (let i = 0; i < deg.length; i++) {
+            setTimeout(() => {
+                degreeRef.current.innerHTML += deg[i];
+            }, i * delay); 
+        }
+    };
 
     return (
-
         <div>
             <div className={Styles.name}>
-                <audio id="myAudio" autoPlay >
-                    <source src={snd} type="audio/mpeg"/>
+                <audio id="myAudio" autoPlay>
+                    <source src={snd} type="audio/mpeg" />
                 </audio>
-                <div className={`${Styles.myName} myName`}></div>
-                <div className={`${Styles.deg} deg`}></div>
+                <div className={`${Styles.myName} myName`} ref={nameRef}></div>
+                <div className={`${Styles.deg} deg`} ref={degreeRef}></div>
             </div>
             <div className={`${Styles.herokeyboard} keydiv`}>
-                {/* <img src={image} alt="img" /> */}
-                <div className={`${Styles.keyboard} keyboard `}></div>
+                <div className={`${Styles.keyboard} keyboard`} ref={keyboardRef}>
+                    {KEYBOARD_LAYOUT.map((row, rowIndex) => (
+                        row.map(key => (
+                            <div 
+                                className={`${Styles.keys} ${key === 'Enter' ? Styles.enter : ''} ${key === 'Ctrl' ? Styles.ctrl : ''}`}
+                                id={`Key${key}`}
+                                key={`${key}-${rowIndex}`}
+                            >
+                                {key}
+                            </div>
+                        ))
+                    ))}
+                </div>
             </div>
         </div>
-  )
+    );
 }
 
-export default Hero
+export default Hero;
