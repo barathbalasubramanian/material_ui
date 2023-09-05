@@ -21,16 +21,16 @@ function Contact() {
             <CustomizedSwitches />
             <FloatingActionButtonsLeft />
             <FloatingActionButtonsRight />
-            <div className="title">
-                <span>Contact</span>
-            </div>
             <div className="modal">
                 <div className="form">
                     <form>
+                        <div className='title'>Contact</div>
                         <label htmlFor="name" required>Name :</label><br />
                         <input id="name" type="text" /><br />
                         <label htmlFor="email" required>Email Address :</label><br />
                         <input id="email" type="email" /><br />
+                        <label htmlFor="message">Message</label> <br />
+                        <textarea name="msg" id="msg" required></textarea> <br />
                         <button type="button" onClick={removeInput}>Send</button>
                     </form>
                 </div>

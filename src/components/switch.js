@@ -57,7 +57,7 @@ export default function CustomizedSwitches() {
   const ChangeColor = () => {
     setDarkMode(!darkMode);
 
-    const bgColor = darkMode ? "white" : "rgba(0, 0, 0)";
+    const bgColor = darkMode ? "white" : "rgba(0, 0, 0,0.95)";
     const textColor = !darkMode ? "rgba(255,255,255,0.4)" : "black";
     const keyboard_ = !darkMode ? "#9c9c9c66" : "rgba(0,0,0,.75)"
     const keyshadow_ = !darkMode ? "rgba(255, 255, 255, .60)" : "rgba(0,0,0,0.60)";

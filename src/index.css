@@ -182,12 +182,15 @@ body {
 }
 
 .modal {
-  height: 400px;
   width: 650px;
   margin: 4em auto;
 }
 
-.modal input {
+.modal textarea {
+  max-height: 150px;
+  max-width: 650px;
+}
+.modal input , .modal textarea{
   background: rgb(126 110 110 / 15%);
   width: 100%;
   padding: 8px;
@@ -216,9 +219,8 @@ body {
 }
 
 .title {
-  margin-left: 1em;
   font-size: 35px;
-  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .modal button {
@@ -257,9 +259,6 @@ body {
   margin: 0 1em;
 }
 
-/* .inner-element .logo {
-} */
-
 .preview-icon {
   position: absolute;
   bottom: 0;
@@ -297,7 +296,7 @@ body {
 
 @media only screen and (max-width: 700px) {
   .modal {
-    height: 360px;
+    height: 100%;
     width: 360px;
     display: flex;
     align-items: center;
@@ -308,9 +307,13 @@ body {
   .modal input {
     width: 14em;
   }
+  .modal textarea {
+    max-height: 90px;
+    max-width: 300px;
+  }
   .title {
-    margin-left: 0.6em;
     margin-top: 3em;
+    margin-bottom: 2em;
   }
   .right {
     margin: 0;

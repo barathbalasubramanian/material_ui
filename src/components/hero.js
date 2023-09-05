@@ -16,23 +16,23 @@ function Hero({ onCompletion }) {
 
     useEffect(() => {
 
-        const keyboard = document.querySelector('.fade-in')
-        keyboard.classList.add('visible')
+        // const keyboard = document.querySelector('.fade-in')
+        // keyboard.classList.add('visible')
 
-        setTimeout(() => { typeName() } , 200 );
+        // setTimeout(() => { typeName() } , 200 );
 
         const nameDuration = 'BarathKumar B'.length * 200;
         const degDuration = "B.Tech".length * 200;
 
-        const typingTimer = setTimeout(typing, 500 + nameDuration);
-        const splitKeysTimer = setTimeout(() => {
+        // const typingTimer = setTimeout(typing, 500 + nameDuration);
+        // const splitKeysTimer = setTimeout(() => {
             splitKeys();
             onCompletion();
-        }, 1000 + nameDuration + degDuration + 500); 
+        // }, 1000 + nameDuration + degDuration + 500); 
 
         return () => {
-            clearTimeout(typingTimer);
-            clearTimeout(splitKeysTimer);
+            // clearTimeout(typingTimer);
+            // clearTimeout(splitKeysTimer);
         };
     }, []);
 
@@ -104,13 +104,19 @@ function Hero({ onCompletion }) {
         <div className='heroSection'>
             <div className={Styles.photo}>
                 <img src={me} alt="My Pic" />
+                <div className={Styles.intro}>
+                    <div>FullStack Developer <br /> ML Engineer</div>
+                </div>
             </div>
+            <audio id="myAudio" autoPlay>
+                <source src={snd} type="audio/mpeg" />
+            </audio>
             <div className={Styles.name}>
-                <audio id="myAudio" autoPlay>
-                    <source src={snd} type="audio/mpeg" />
-                </audio>
-                <div className={`${Styles.myName} myName`} ref={nameRef}></div>
-                <div className={`${Styles.deg} deg`} ref={degreeRef}></div>
+                <div className={`${Styles.myName} myName`} ref={nameRef}>BarathKumar B</div>
+                <div className={`${Styles.deg} deg`} ref={degreeRef}>B.Tech</div>
+                <div className={Styles.small_ab}>
+                    Dedicated Full Stack Developer and ML Engineer, Diving deep into every layer of tech innovation.
+                </div>
             </div>
             <div className={`${Styles.herokeyboard} keydiv fade-in`} >
                 <div className={`${Styles.keyboard} keyboard`} ref={keyboardRef}>

@@ -1,4 +1,3 @@
-
 .herokeyboard {
     position: absolute;
     width: 36em;
@@ -42,19 +41,28 @@
     position: absolute;
     top: 15%;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-35%);
     color: var(--text);
+    backdrop-filter: blur(15px);
+    transition: all .5s ease-in;
 }
 
 .myName {
     font-size: 50px;
     letter-spacing: 5px;
-    color: cadetblue;
+    color: wheat;
 }
 
 .deg {
-    padding-left: 4px;
+    padding-left: 1px;
     font-size: 18px;
+}
+
+.small_ab {
+    margin-top: 3rem;
+    color: var(--text);
+    font-size: 22px;
+    max-width: 23em;
 }
 
 .split .keys {
@@ -66,14 +74,71 @@
     height: 0;
     position: absolute;
     top: 0;
-    right: 100em;
-    transition: all 1s;
+    right: 200em;
+    transition: all .5s;
+}
+.intro {
+    display: none;
 }
 
 .animate {
     width: 214px;
     height: 214px;
-    top: 35%;
-    left: 15%;
+    top: 15%;
+    left: 20%;
 }
 
+@media only screen and (max-width: 768px) {
+    .myName {
+        font-size: 35px;
+        letter-spacing: 1px;
+        width: 8em;
+    }
+    .name {
+        transform: translate(-50%);
+    }
+    .small_ab {
+        display: none;
+    }
+    .keys{
+        width: 2em;
+        height: 2em;
+      }
+      .keyboard {
+        width: 25em;
+      }
+      .ctrl{
+        width: 3.2em;
+      }
+      .enter {
+        width: 4em;
+      }
+      .photo:hover ~ .intro {
+        cursor: pointer;
+        transform: rotateY(50deg);
+      }
+      .intro:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        transition: all .2s ease-in;
+      }
+      .animate  {
+        top: 30%;
+        left: 25%;        
+        transform-style: preserve-3d;
+      }
+      .intro {
+        display: block;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        position: absolute;
+        top: 69%;
+        left: -3%;
+        width: 15em;
+        height: 4em;
+        color: var(--text);
+        transform: translateZ(60px);
+        padding: 1em 2em;
+        font-size: 17px;
+    }
+}
