@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Styles from '../css/hero.module.css';
 import snd from '../assets/keyboard.mp3';
 import me from '../assets/me.png'
@@ -13,26 +13,27 @@ function Hero({ onCompletion }) {
     const keyboardRef = useRef(null);
     const nameRef = useRef(null);
     const degreeRef = useRef(null);
+    const [open , setOpen] = useState(false)
 
     useEffect(() => {
 
-        // const keyboard = document.querySelector('.fade-in')
-        // keyboard.classList.add('visible')
+        const keyboard = document.querySelector('.fade-in')
+        keyboard.classList.add('visible')
 
-        // setTimeout(() => { typeName() } , 200 );
+        setTimeout(() => { typeName() } , 200 );
 
         const nameDuration = 'BarathKumar B'.length * 200;
         const degDuration = "B.Tech".length * 200;
 
-        // const typingTimer = setTimeout(typing, 500 + nameDuration);
-        // const splitKeysTimer = setTimeout(() => {
+        const typingTimer = setTimeout(typing, 500 + nameDuration);
+        const splitKeysTimer = setTimeout(() => {
             splitKeys();
             onCompletion();
-        // }, 1000 + nameDuration + degDuration + 500); 
+        }, 1000 + nameDuration + degDuration + 500); 
 
         return () => {
-            // clearTimeout(typingTimer);
-            // clearTimeout(splitKeysTimer);
+            clearTimeout(typingTimer);
+            clearTimeout(splitKeysTimer);
         };
     }, []);
 
@@ -52,6 +53,9 @@ function Hero({ onCompletion }) {
             document.querySelector('.keyboard').style.display = "none"
         }, 500)
         setTimeout(() => {
+            var name = document.querySelector(`.${Styles.name}`)
+            name.classList.add(`${Styles.name_after}`)
+            setOpen(true)
             onCompletion();
             const image = document.querySelector(`.${Styles.photo}`);
             image.classList.add(`${Styles.animate}`);
@@ -112,11 +116,14 @@ function Hero({ onCompletion }) {
                 <source src={snd} type="audio/mpeg" />
             </audio>
             <div className={Styles.name}>
-                <div className={`${Styles.myName} myName`} ref={nameRef}>BarathKumar B</div>
-                <div className={`${Styles.deg} deg`} ref={degreeRef}>B.Tech</div>
-                <div className={Styles.small_ab}>
-                    Dedicated Full Stack Developer and ML Engineer, Diving deep into every layer of tech innovation.
-                </div>
+                <div className={`${Styles.myName} myName`} ref={nameRef}></div>
+                <div className={`${Styles.deg} deg`} ref={degreeRef}></div>
+                {
+                    open && 
+                    <div className={Styles.small_ab}>
+                        Dedicated Full Stack Developer and ML Engineer, Diving deep into every layer of tech innovation.
+                    </div>
+                }
             </div>
             <div className={`${Styles.herokeyboard} keydiv fade-in`} >
                 <div className={`${Styles.keyboard} keyboard`} ref={keyboardRef}>

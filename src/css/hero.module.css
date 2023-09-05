@@ -41,10 +41,14 @@
     position: absolute;
     top: 15%;
     left: 50%;
-    transform: translate(-35%);
+    transform: translate(-50%);
     color: var(--text);
     backdrop-filter: blur(15px);
     transition: all .5s ease-in;
+}
+
+.name_after {
+    transform: translate(-35%);
 }
 
 .myName {
@@ -73,9 +77,9 @@
     width: 0;
     height: 0;
     position: absolute;
-    top: 0;
+    top: -100px;
     right: 200em;
-    transition: all .5s;
+    transition: all 1s ease-in; 
 }
 .intro {
     display: none;

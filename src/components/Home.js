@@ -7,7 +7,7 @@ import Hero from "./hero";
 
 function Home() {
 
-  const [showComponents, setShowComponents] = useState(true);
+  const [showComponents, setShowComponents] = useState(false);
   useEffect(() => {
     if (showComponents) {
         const timer = setTimeout(() => {
