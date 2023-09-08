@@ -64,7 +64,6 @@
 
 .small_ab {
     margin-top: 3rem;
-    color: rgba(191, 24, 24, 0.5);
     font-size: 22px;
     max-width: 23em;
 
@@ -138,10 +137,10 @@
       .enter {
         width: 4em;
       }
-      .photo:hover ~ .intro {
+      /* .photo:hover ~ .intro {
         cursor: pointer;
         transform: rotateY(50deg);
-      }
+      } */
       .intro:hover {
         cursor: pointer;
         transform: scale(1.05);

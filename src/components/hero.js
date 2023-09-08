@@ -57,7 +57,7 @@ function Hero({ onCompletion }) {
             name.classList.add(`${Styles.name_after}`)
             setOpen(true)
             onCompletion();
-            const image = document.querySelector(`.${Styles.photo}`);
+            const image = document.querySelector('.mine');
             image.classList.add(`${Styles.animate}`);
         }, 1100);
     };
@@ -106,7 +106,7 @@ function Hero({ onCompletion }) {
 
     return (
         <div className='heroSection'>
-            <div className={Styles.photo}>
+            <div className={`${Styles.photo} mine`}>
                 <img src={me} alt="My Pic" />
                 <div className={Styles.intro}>
                     <div>FullStack Developer <br /> ML Engineer</div>
