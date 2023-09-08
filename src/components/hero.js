@@ -69,7 +69,6 @@ function Hero({ onCompletion }) {
     
         for (let i = 0; i < name.length; i++) {
             setTimeout(() => {
-                console.log(name[i])
                 if (name[i] === " ") {  } 
                 else { 
                     let letter = document.getElementById(`Key${name[i].toUpperCase()}`); 
