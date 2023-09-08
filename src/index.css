@@ -328,5 +328,11 @@ body {
   .centered-content {
     width: 100%;
   }
+  .contact .floating-div .left-icons {
+      display: none;
+  }
+  .modal {
+    justify-content: space-between;
+  }
 }
 
