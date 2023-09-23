@@ -5,33 +5,43 @@ import { useLocation } from 'react-router-dom';
 
 function Projects() {
 
-    const [projects] = useState([
+    const projects = [
         {
             name: 'AquaAssist',
             desc: 'Book online and get water cans delivered straight to your home.',
-            link: 'https://github.com/barathbalasubramanian/WaterserviceApp'
+            link: 'https://github.com/barathbalasubramanian/WaterserviceApp',
+            lang: "Vue",
+            icon: 'vue'
         },
         {
             name: 'E-Tech Care',
             desc: 'Digital solutions. Expert guidance. Seamless tech support. Elevate experience. Always connected.',
-            link: 'https://github.com/barathbalasubramanian/urban_frontend'
+            link: 'https://github.com/barathbalasubramanian/urban_frontend',
+            lang: "Vue Vite",
+            icon: 'vite'
         },
         {
             name: 'FlyHigh Fiasco',
             desc: "Fly. Adapt. Sky's hurdles. Beat the odds. Soar triumphantly!",
-            link: 'https://github.com/barathbalasubramanian/'
+            link: 'https://github.com/barathbalasubramanian/',
+            lang: "Python Pygame",
+            icon: "python"
         },
         {
             name: 'WhisperWeb',
             desc: "Connect, converse, remain concealed. WhisperWeb - where genuine conversations meet discretion.",
-            link: 'https://github.com/barathbalasubramanian/Chat-App'
+            link: 'https://github.com/barathbalasubramanian/Chat-App',
+            lang: "Vue",
+            icon: "vue"
         },
         {
             name: 'Game of Life',
             desc: "Navigate life's twists and turns in this classic journey simulation.",
-            link: 'https://github.com/barathbalasubramanian/GameOfLife'
+            link: 'https://github.com/barathbalasubramanian/GameOfLife',
+            lang: "Python",
+            icon: "python"
         },
-    ]);
+    ];
 
     const containerRef = useRef(null);
 
@@ -54,6 +64,8 @@ function Projects() {
                         name={project.name}   
                         desc={project.desc}
                         link={project.link}
+                        lang={project.lang}
+                        icon={project.icon}
                     /> 
                 ))}
             </div>
