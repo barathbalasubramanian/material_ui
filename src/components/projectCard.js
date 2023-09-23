@@ -6,6 +6,7 @@ import html from '../assets/icons/html.png';
 import css from '../assets/icons/css.png';
 import js from '../assets/icons/js.png';
 import python from '../assets/icons/py.png';
+import django from '../assets/icons/dj.png'
 import vite from '../assets/icons/vite.png'
 
 function ProjectCard(props) {
@@ -30,7 +31,7 @@ function ProjectCard(props) {
                     <div className='pro-icon'>
                         <img src={ 
                             `${ props.icon === "vue" ? vue 
-                                : props.icon === "html" ? html
+                                : props.icon === "django" ? django
                                 : props.icon === "python" ? python
                                 : props.icon === "vite" ? vite                                
                                 : ""

@@ -31,8 +31,8 @@ function Projects() {
             name: 'WhisperWeb',
             desc: "Connect, converse, remain concealed. WhisperWeb - where genuine conversations meet discretion.",
             link: 'https://github.com/barathbalasubramanian/Chat-App',
-            lang: "Vue",
-            icon: "vue"
+            lang: "Django",
+            icon: "django"
         },
         {
             name: 'Game of Life',
