@@ -18,7 +18,7 @@ const ImageRotator = ({ imagePaths }) => {
           />
         ))}
       </SceneRotation>
-      <OrbitControls />
+      <OrbitControls enableZoom={true} />
     </Canvas>
   );
 };
@@ -39,17 +39,16 @@ const SceneRotation = ({ children }) => {
 const ImagePlane = ({ path, index, totalImages, radius = 5 }) => {
     const texture = new THREE.TextureLoader().load(path);
     
-    // Positioning images spherically using the Fibonacci Sphere algorithm
     const phi = Math.acos(1 - 2 * (index + 0.5) / totalImages);
     const theta = Math.sqrt(totalImages * Math.PI) * phi;
-    
+
     return (
       <Plane args={[1, 1]} position={[
         Math.cos(theta) * Math.sin(phi) * radius,
         Math.sin(theta) * Math.sin(phi) * radius,
         Math.cos(phi) * radius
       ]}>
-        <meshBasicMaterial attach="material" map={texture} side={THREE.DoubleSide} />
+        <meshBasicMaterial attach="material" map={texture} side={THREE.DoubleSide} transparent={true} />
       </Plane>
     );
   };
