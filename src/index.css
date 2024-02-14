@@ -61,9 +61,6 @@ body {
   background-color: var(--select) !important;
 }
 
-.css-19y6t7e-MuiButtonBase-root-MuiTab-root {
-  color: var(--icon) !important;
-}
 
 .css-19y6t7e-MuiButtonBase-root-MuiTab-root.Mui-selected {
   color: var(--select) !important;

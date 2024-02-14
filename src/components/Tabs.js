@@ -6,6 +6,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Home, Projects } from "./Icons";
 import { useLocation, useNavigate } from "react-router-dom";
 import PhoneIcon from '@mui/icons-material/Phone';
+import { CommitSharp } from "@mui/icons-material";
 
 const darkTheme = createTheme({
   palette: {
@@ -37,6 +38,10 @@ function IconTabs() {
     if (newValue === 0) navigate("/about");
     else if (newValue === 1) navigate("/projects");
     else if (newValue === 2) navigate("/contact");
+
+    var ele = document.querySelector(`.tab${newValue}`)
+    console.log(ele)
+    ele.style.color = "red !important"
   };
 
   return (
@@ -58,12 +63,13 @@ function IconTabs() {
             },
           }}
         >
-          <Tab icon={<Home sx={{ fontSize: 30 }} />} aria-label="phone" />
+          <Tab icon={<Home sx={{ fontSize: 30 }} />} aria-label="phone" className="tab0" />
           <Tab
             icon={<Projects sx={{ fontSize: 30 }} />}
             aria-label="favorite"
+            className="tab1"
           />
-          <Tab icon={<PhoneIcon />} aria-label="phone" />
+          <Tab icon={<PhoneIcon />} aria-label="phone" className="tab2"/>
         </Tabs>
       </div>
     </ThemeProvider>

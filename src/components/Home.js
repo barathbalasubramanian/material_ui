@@ -7,7 +7,7 @@ import Hero from "./hero";
 
 function Home() {
 
-  const [showComponents, setShowComponents] = useState(false);
+  const [showComponents, setShowComponents] = useState(true);
   useEffect(() => {
     if (showComponents) {
         const timer = setTimeout(() => {
@@ -21,7 +21,7 @@ function Home() {
 
   return (
     <>
-      <Hero onCompletion={() => setShowComponents(true)} />
+      {/* <Hero onCompletion={() => setShowComponents(true)} /> */}
       { showComponents && (
           <>
               <div className="fade-in icontabs"><IconTabs /></div>
