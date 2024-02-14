@@ -70,6 +70,14 @@ body {
   min-height: 0 !important;
 }
 
+.css-y7kfv.Mui-selected {
+  color: var(--select) !important;
+}
+
+.css-19y6t7e-MuiButtonBase-root-MuiTab-root{
+  color: var(--text) !important;
+}
+
 .floating-div {
   height: 100%;
   position: absolute;

@@ -6,7 +6,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Home, Projects } from "./Icons";
 import { useLocation, useNavigate } from "react-router-dom";
 import PhoneIcon from '@mui/icons-material/Phone';
-import { CommitSharp } from "@mui/icons-material";
 
 const darkTheme = createTheme({
   palette: {
