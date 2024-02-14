@@ -55,7 +55,7 @@ function Projects() {
 
     return (
         <div>
-            <FloatingActionButtonsLeft location={location.pathname}/>
+            {/* <FloatingActionButtonsLeft location={location.pathname}/> */}
             <div className='projectDetail' onWheel={handleWheel} ref={containerRef}>
                 {projects.map((project, ind) => (
                     <ProjectCard 

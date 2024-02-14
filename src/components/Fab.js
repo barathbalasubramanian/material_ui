@@ -27,7 +27,7 @@ export default function FloatingActionButtonsRight() {
 
   const openPdf = () => {
     console.log("click");
-    window.open("BarathkumarResume.pdf", "_blank");
+    window.open("resume.pdf", "_blank");
   };
 
   return (

@@ -70,6 +70,10 @@ body {
   min-height: 0 !important;
 }
 
+.css-y7kfv{
+  color: none;
+}
+
 .css-y7kfv.Mui-selected {
   color: var(--select) !important;
 }
@@ -328,6 +332,8 @@ body {
   height: 80vh;
   overflow-x: scroll !important;
   padding: 0 2em;
+
+  cursor: pointer;
 }
 
 .imageRotator {
